@@ -665,10 +665,9 @@ func (a *DefaultApiService) CreatePullRequest(projectKey, repositorySlug string,
 Creates a branch using the information provided in the {@link RestCreateBranchRequest request}  &lt;p&gt;  The authenticated user must have &lt;strong&gt;REPO_WRITE&lt;/strong&gt; permission for the context repository to call  this resource.
 
 @return */
-func (a *DefaultApiService) CreateBranch(projectKey, repositorySlug string) (*APIResponse, error) {
+func (a *DefaultApiService) CreateBranch(projectKey, repositorySlug string, localVarPostBody interface{}) (*APIResponse, error) {
 	var (
 		localVarHTTPMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
 	)
@@ -2266,7 +2265,7 @@ Update the content of &lt;code&gt;path&lt;/code&gt;, on the given &lt;code&gt;re
 
 @param path the file path to retrieve content from
 @return */
-func (a *DefaultApiService) EditFile(projectKey, repositorySlug, path string) (*APIResponse, error) {
+func (a *DefaultApiService) EditFile(projectKey, repositorySlug, path string, localVarFormParams url.Values) (*APIResponse, error) {
 	var (
 		localVarHTTPMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
@@ -2282,10 +2281,9 @@ func (a *DefaultApiService) EditFile(projectKey, repositorySlug, path string) (*
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{"multipart/form-data"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
