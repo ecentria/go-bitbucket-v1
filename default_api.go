@@ -1082,10 +1082,9 @@ func (a *DefaultApiService) CreatePullRequestWithOptions(projectKey, repo string
 Creates a tag using the information provided in the {@link RestCreateTagRequest request}  &lt;p&gt;  The authenticated user must have &lt;strong&gt;REPO_WRITE&lt;/strong&gt; permission for the context repository to call this  resource.
 
 @return */
-func (a *DefaultApiService) CreateTag(projectKey, repositorySlug string) (*APIResponse, error) {
+func (a *DefaultApiService) CreateTag(projectKey, repositorySlug string, localVarPostBody interface{}) (*APIResponse, error) {
 	var (
 		localVarHTTPMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
 	)
@@ -2265,7 +2264,7 @@ Update the content of &lt;code&gt;path&lt;/code&gt;, on the given &lt;code&gt;re
 
 @param path the file path to retrieve content from
 @return */
-func (a *DefaultApiService) EditFile(projectKey, repositorySlug, path string, localVarFormParams url.Values) (*APIResponse, error) {
+func (a *DefaultApiService) EditFile(projectKey, repositorySlug, path string, localVarFormParams map[string]string) (*APIResponse, error) {
 	var (
 		localVarHTTPMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
