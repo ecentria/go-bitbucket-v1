@@ -2264,7 +2264,7 @@ Update the content of &lt;code&gt;path&lt;/code&gt;, on the given &lt;code&gt;re
 
 @param path the file path to retrieve content from
 @return */
-func (a *DefaultApiService) EditFile(projectKey, repositorySlug, path string, localVarFormParams map[string]string) (*APIResponse, error) {
+func (a *DefaultApiService) EditFile(projectKey, repositorySlug, path string, localVarFormParams url.Values) (*APIResponse, error) {
 	var (
 		localVarHTTPMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
