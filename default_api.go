@@ -7657,6 +7657,12 @@ func (a *DefaultApiService) GetTags(project, repository string, localVarOptional
 	if err := typeCheckParameter(localVarOptionals["orderBy"], "string", "orderBy"); err != nil {
 		return nil, err
 	}
+	if err := typeCheckParameter(localVarOptionals["limit"], "int", "limit"); err != nil {
+		return nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["start"], "int", "start"); err != nil {
+		return nil, err
+	}
 
 	if localVarTempParam, localVarOk := localVarOptionals["filterText"].(string); localVarOk {
 		localVarQueryParams.Add("filterText", parameterToString(localVarTempParam, ""))
@@ -7664,6 +7670,13 @@ func (a *DefaultApiService) GetTags(project, repository string, localVarOptional
 	if localVarTempParam, localVarOk := localVarOptionals["orderBy"].(string); localVarOk {
 		localVarQueryParams.Add("orderBy", parameterToString(localVarTempParam, ""))
 	}
+	if localVarTempParam, localVarOk := localVarOptionals["limit"].(int); localVarOk {
+		localVarQueryParams.Add("limit", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["start"].(int); localVarOk {
+		localVarQueryParams.Add("start", parameterToString(localVarTempParam, ""))
+	}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
