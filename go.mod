@@ -1,4 +1,4 @@
-module github.com/githoober/go-bitbucket-v1
+module github.com/ecentria/go-bitbucket-v1
 
 go 1.14
 
