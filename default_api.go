@@ -10785,6 +10785,12 @@ func (a *DefaultApiService) StreamChanges(projectKey, repositorySlug string, loc
 	if err := typeCheckParameter(localVarOptionals["fromRepo"], "string", "fromRepo"); err != nil {
 		return nil, err
 	}
+	if err := typeCheckParameter(localVarOptionals["limit"], "int", "limit"); err != nil {
+		return nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["start"], "int", "start"); err != nil {
+		return nil, err
+	}
 
 	if localVarTempParam, localVarOk := localVarOptionals["from"].(string); localVarOk {
 		localVarQueryParams.Add("from", parameterToString(localVarTempParam, ""))
@@ -10794,6 +10800,12 @@ func (a *DefaultApiService) StreamChanges(projectKey, repositorySlug string, loc
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["fromRepo"].(string); localVarOk {
 		localVarQueryParams.Add("fromRepo", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["limit"].(int); localVarOk {
+		localVarQueryParams.Add("limit", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["start"].(int); localVarOk {
+		localVarQueryParams.Add("start", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
